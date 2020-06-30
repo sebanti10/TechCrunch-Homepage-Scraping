@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+       <meta charset="utf-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+       <!-- Bootstrap CSS -->
+       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+       <title>TechCrunch Scraper!</title>
+    </head>
+    <body>
+
+        <h1 class="display-4" style="text-align:center;">Scraped data from TechCrunch.com</h1><br><br>
+
+        <table class="table table-bordered">
+            <thead>
+                <tr class="table-active">
+                    <th scope="col"> S.No.</th>
+                    <th scope="col"> News Title</th>
+                    <th scope="col"> TimeStamp</th>
+                    <th scope="col"> Image Source URL</th>
+                    <th scope="col"> Author</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                {% for key, values in scraped_dict.items() %}
+                <tr>
+                    <th scope="row">{{ key + 1 }}</th>
+                    {% for val in values %}
+                        {% if values[values|length - 1] == val %}
+                            {% for v in val %}
+                                <td>{{ v }}</td>
+                            {% endfor %}
+                        {% else %}
+                            <td> {{ val }} </td>
+                        {% endif %}
+                    {% endfor %}
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </body>
+</html>
