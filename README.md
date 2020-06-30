@@ -1,9 +1,11 @@
 # Web-Scraping-TechCrunch-s-Homepage-using-Python
 Web Scraped TechCrunch's Homepage to show article data using Python.
 
-Python file used for web scraping- techCrunch.py
-Python file used for Flask- app.py
-HTML page- homepage.html
+<h3>
+<p> Python file used for web scraping- <i> techCrunch.py </i> </p>
+<p> Python file used for Flask- <i> app.py <i> </p>
+<p> HTML page- <i> homepage.html </i>  </p>
+</h3>
 
 Libraries used- BeautifulSoup, requests, datetime, timezone, dateutil.
 Developed using Python Flask and Jinja2 was used for templating.
