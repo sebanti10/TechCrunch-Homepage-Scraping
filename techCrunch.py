@@ -13,7 +13,7 @@ scraped_dict={}
 def get_data():
     res = requests.get("https://www.techcrunch.com")
     try:
-        soup=BeautifulSoup(res.content, "html5lib")
+        soup=BeautifulSoup(res.content, "html.parser")
 
         #latest section data
         latest=soup.find(class_='river--homepage')
