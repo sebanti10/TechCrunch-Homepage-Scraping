@@ -34,6 +34,8 @@
                             {% for v in val %}
                                 <td>{{ v }}</td>
                             {% endfor %}
+                        {% elif values[2] == val %}
+                            <td> <a href="{{ val.href }}"> {{ val }}</a> </td>
                         {% else %}
                             <td> {{ val }} </td>
                         {% endif %}
