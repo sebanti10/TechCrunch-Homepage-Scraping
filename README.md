@@ -1,6 +1,6 @@
 # TechCrunch-Homepage-Scraping
 <h4> Web Scraping TechCrunch's homepage using Python </h4>
-<br> ========================================================= <br>
+========================================================= <br>
 
 <p> Python libraries used are: BeautifulSoup,requests, datetimr, dateutil. </p>
 <p> The website has been deployed using Python Flask and Jinja2 for templating. </p>
