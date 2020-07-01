@@ -5,7 +5,7 @@
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime, timezone
-from dateutil import parser
+from dateutil import parser, tz
 
 #dictionary to store the final get_data
 scraped_dict={}
@@ -48,9 +48,12 @@ def get_data():
 
             #inserting article timestamp
             raw_datetime=article_time_stamp[article]['datetime']
-            raw_datetime=parser.parse(raw_datetime).replace(tzinfo=timezone.utc).astimezone(tz=None)
-            final_datetime=raw_datetime.strftime('%H:%M %p %Z %B %d, %Y')
+            raw_datetime=datetime.strptime(raw_datetime, '%Y-%m-%dT%H:%M:%S%z').astimezone()
+            final_datetime=raw_datetime.strftime('%I:%M %p %Z %B %d, %Y')
             scraped_dict[article].append(final_datetime)
+            #raw_datetime=parser.parse(raw_datetime).replace(tzinfo=timezone.utc).astimezone(tz=None)
+            #raw_datetime=parser.parse(raw_datetime).replace(tzinfo=timezone.utc).astimezone(tz=None)
+            
 
 
             #inserting article image url
