@@ -60,7 +60,7 @@ def get_data():
             authors_list=[]
             for author in article_authors[article].find_all('a'):
                 authors_list.append(author.get_text().strip())
-                scraped_dict[article].append(authors_list)
+            scraped_dict[article].append(", ".join(authors_list))
 
         return scraped_dict
 

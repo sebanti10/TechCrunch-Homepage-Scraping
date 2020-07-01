@@ -30,11 +30,7 @@
                 <tr>
                     <th scope="row">{{ key + 1 }}</th>
                     {% for val in values %}
-                        {% if values[values|length - 1] == val %}
-                            {% for v in val %}
-                                <td>{{ v }}</td>
-                            {% endfor %}
-                        {% elif values[2] == val %}
+                        {% if values[2] == val %}
                             <td> <a href="{{ val.href }}"> {{ val }}</a> </td>
                         {% else %}
                             <td> {{ val }} </td>
